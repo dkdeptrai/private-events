@@ -1,0 +1,21 @@
+<h1><%= @user.email %>'s Events</h1>
+<% if @upcomming_events.empty? %>
+  <h2>No upcomming events.</h2>
+<% else %>
+  <h2>Upcomming Events</h2>
+  <ul>
+    <% @upcomming_events.each do |event| %>
+      <li><%= link_to event.name, event_path(event) %></li>
+    <% end %>
+  </ul>
+<% end %>
+<% if @past_events.empty? %>
+  <h2>No past events.</h2>
+<% else %>
+  <h2>Past Events</h2>
+  <ul>
+    <% @past_events.each do |event| %>
+      <li><%= link_to event.name, event_path(event) %></li>
+    <% end %>
+  </ul>
+<% end %>
